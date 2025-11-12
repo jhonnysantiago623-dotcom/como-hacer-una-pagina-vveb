@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guía para crear tu propia página web</title>
+  <meta name="description" content="Aprende paso a paso cómo crear una página web desde cero con HTML, CSS y JavaScript." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --accent1: linear-gradient(135deg,#7c3aed,#06b6d4);
+      --glass: rgba(255,255,255,0.04);
+      --muted: #9aa4b2;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#e6eef6;background:radial-gradient(1000px 600px at -10% -10%, rgba(12,34,56,0.25), transparent), var(--bg)}
+    .container{max-width:1100px;margin:40px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:var(--accent1);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;box-shadow:0 6px 20px rgba(7,12,26,0.6)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a.cta{background:linear-gradient(90deg,#06b6d4,#7c3aed);padding:10px 14px;border-radius:10px;color:#031025}
+
+    .hero{margin-top:28px;text-align:center}
+    h1{margin:0;font-size:36px;line-height:1.1}
+    p.lead{color:var(--muted);margin-top:12px;font-size:18px}
+
+    .steps{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+    .step{background:var(--glass);padding:20px;border-radius:12px}
+    .step h2{margin-top:0}
+
+    .code-sample{background:#1e293b;color:#a5b4fc;padding:12px;border-radius:8px;font-family:monospace;font-size:14px;overflow-x:auto}
+
+    footer{margin-top:40px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);text-align:center}
+
+    @media(max-width:600px){
+      h1{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">WEB</div>
+        <div>
+          <div style="font-weight:800">Cómo crear una página web</div>
+          <div class="muted" style="font-size:13px">Guía práctica para principiantes</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#pasos">Pasos</a>
+        <a href="#ejemplo">Ejemplo</a>
+        <a href="#contacto" class="cta">Contacto</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Aprende a crear tu propia página web desde cero</h1>
+      <p class="lead">En esta guía descubrirás lo básico para construir un sitio web usando HTML, CSS y JavaScript. No necesitas experiencia previa, solo ganas de aprender.</p>
+    </section>
+
+    <section id="pasos" class="steps">
+      <div class="step">
+        <h2>1. Estructura con HTML</h2>
+        <p>HTML define el contenido y la estructura de la página. Usa etiquetas para organizar textos, imágenes y enlaces.</p>
+        <div class="code-sample">&lt;h1&gt;Hola Mundo&lt;/h1&gt;<br>&lt;p&gt;Esta es mi primera página web.&lt;/p&gt;</div>
+      </div>
+
+      <div class="step">
+        <h2>2. Diseña con CSS</h2>
+        <p>CSS permite dar estilo al contenido. Puedes cambiar colores, fuentes, márgenes y hacer diseños adaptables.</p>
+        <div class="code-sample">h1 {<br>  color: #06b6d4;<br>  text-align: center;<br>}</div>
+      </div>
+
+      <div class="step">
+        <h2>3. Añade interacción con JavaScript</h2>
+        <p>JavaScript hace que la página cobre vida, permitiendo animaciones, botones interactivos y validaciones.</p>
+        <div class="code-sample">document.querySelector('h1').onclick = () => alert('¡Hola!');</div>
+      </div>
+    </section>
+
+    <section id="ejemplo" style="margin-top:40px">
+      <h2>Ejemplo práctico</h2>
+      <p class="muted">Este pequeño ejemplo muestra cómo combinar HTML, CSS y JavaScript en una sola página.</p>
+      <div class="code-sample">&lt;!doctype html&gt;<br>&lt;html&gt;<br>&lt;head&gt;<br>&nbsp;&nbsp;&lt;style&gt;body {text-align:center; font-family:sans-serif;}&lt;/style&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>&nbsp;&nbsp;&lt;h1&gt;Mi primera web&lt;/h1&gt;<br>&nbsp;&nbsp;&lt;button onclick="alert('¡Bien hecho!')"&gt;Haz clic&lt;/button&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;</div>
+    </section>
+
+    <section id="contacto" style="margin-top:40px">
+      <h2>¿Tienes dudas?</h2>
+      <p class="muted">Envíame tus preguntas o sugerencias sobre el aprendizaje de desarrollo web.</p>
+      <form onsubmit="handleSubmit(event)">
+        <input id="name" type="text" placeholder="Tu nombre" required />
+        <input id="email" type="email" placeholder="Tu correo" required />
+        <textarea id="message" rows="5" placeholder="Tu mensaje" required></textarea>
+        <button type="submit" style="margin-top:10px;padding:10px 16px;border:none;border-radius:10px;background:var(--accent1);color:#021627;font-weight:700">Enviar</button>
+      </form>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Aprende Web — Guía de creación de sitios. Todos los derechos reservados.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      alert('Gracias, '+name+' — tu mensaje fue enviado (simulado).');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
